@@ -84,9 +84,10 @@ passport.serializeUser(User.serializeUser()); // Serialize user for session
 passport.deserializeUser(User.deserializeUser()); // Deserialize user from session
 
 app.use((req, res, next) => {
-    res.locals.success = req.flash('success'); // Make flash messages available in views
-    res.locals.error = req.flash('error'); // Make flash messages available in views
-    res.locals.currUser = req.user; // Make current user available in views
+    console.log("Current User:", req.user); // Debugging
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    res.locals.currUser = req.user || null; // Make current user available in views
     next();
 });
 

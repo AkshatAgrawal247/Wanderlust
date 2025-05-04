@@ -67,9 +67,9 @@ const sessionOptions = {
 };
 
 // Root route
-// app.get('/', (req, res) => {
-//     res.send("Hi, I'm the root route!");
-// });
+app.get('/', (req, res) => {
+    res.send("Welcome!");
+});
 
 
 
